@@ -3,7 +3,7 @@
 // found in the LICENSE file.
 
 #import "GoogleMapGroundOverlayController.h"
-#import "JsonConversions.h"
+#import "FLTGoogleMapJSONConversions.h"
 
 static UIImage* ExtractBitmapDescriptor(NSObject<FlutterPluginRegistrar>* registrar, NSArray* bitmap);
 
