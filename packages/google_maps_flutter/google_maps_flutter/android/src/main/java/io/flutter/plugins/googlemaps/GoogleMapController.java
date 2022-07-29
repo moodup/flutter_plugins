@@ -78,6 +78,7 @@ final class GoogleMapController
   private List<Object> initialPolylines;
   private List<Object> initialCircles;
   private List<Map<String, ?>> initialTileOverlays;
+  private List<Object> initialGroundOverlays;
 
   GoogleMapController(
       int id,
