@@ -162,13 +162,13 @@
 }
 
 + (CLLocationCoordinate2D)toLocation:(NSArray*)data {
-  return CLLocationCoordinate2DMake([FLTGoogleMapJsonConversions toDouble:data[0]],
-                                    [FLTGoogleMapJsonConversions toDouble:data[1]]);
+  return CLLocationCoordinate2DMake([FLTGoogleMapJSONConversions toDouble:data[0]],
+                                    [FLTGoogleMapJSONConversions toDouble:data[1]]);
 }
 
 + (CGPoint)toPoint:(NSArray*)data {
-  return CGPointMake([FLTGoogleMapJsonConversions toDouble:data[0]],
-                     [FLTGoogleMapJsonConversions toDouble:data[1]]);
+  return CGPointMake([FLTGoogleMapJSONConversions toDouble:data[0]],
+                     [FLTGoogleMapJSONConversions toDouble:data[1]]);
 }
 
 + (NSArray*)positionToJson:(CLLocationCoordinate2D)position {
@@ -189,8 +189,8 @@
     NSNumber* latitude = data[i][0];
     NSNumber* longitude = data[i][1];
     CLLocation* point =
-        [[CLLocation alloc] initWithLatitude:[FLTGoogleMapJsonConversions toDouble:latitude]
-                                   longitude:[FLTGoogleMapJsonConversions toDouble:longitude]];
+        [[CLLocation alloc] initWithLatitude:[FLTGoogleMapJSONConversions toDouble:latitude]
+                                   longitude:[FLTGoogleMapJSONConversions toDouble:longitude]];
     [points addObject:point];
   }
 
@@ -200,7 +200,7 @@
 + (NSArray<NSArray<CLLocation*>*>*)toHoles:(NSArray*)data {
   NSMutableArray<NSArray<CLLocation*>*>* holes = [[[NSMutableArray alloc] init] init];
   for (unsigned i = 0; i < [data count]; i++) {
-    NSArray<CLLocation*>* points = [FLTGoogleMapJsonConversions toPoints:data[i]];
+    NSArray<CLLocation*>* points = [FLTGoogleMapJSONConversions toPoints:data[i]];
     [holes addObject:points];
   }
 
