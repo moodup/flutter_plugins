@@ -7,7 +7,6 @@ import com.google.android.gms.maps.model.GroundOverlayOptions;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import android.util.Log;
 
 import io.flutter.plugin.common.MethodChannel;
 
@@ -49,9 +48,6 @@ class GroundOverlaysController {
 
     private void addGroundOverlay(
             String groundOverlayId, GroundOverlayOptions groundOverlayOptions, boolean consumeTapEvents) {
-            
-            Log.d("GOOGLE MAPS","GOOGLE MAPS LIB----Add ground overlay " + groundOverlayId);
-
         final GroundOverlay groundOverlay = googleMap.addGroundOverlay(groundOverlayOptions);
 
         GroundOverlayController controller = new GroundOverlayController(groundOverlay, consumeTapEvents);
@@ -86,9 +82,6 @@ class GroundOverlaysController {
             return;
         }
         String groundOverlayId = getGroundOverlayId(groundOverlay);
-
-        Log.d("GOOGLE MAPS","GOOGLE MAPS LIB----Change ground overlay " + groundOverlayId);
-
         GroundOverlayController groundOverlayController = groundOverlayIdToController.get(groundOverlayId);
         if (groundOverlayController != null) {
             Convert.interpretGroundOverlayOptions(groundOverlay, groundOverlayController);
@@ -105,7 +98,6 @@ class GroundOverlaysController {
                 continue;
             }
             String groundOverlayId = (String) rawGroundOverlayId;
-                            Log.d("GOOGLE MAPS","GOOGLE MAPS LIB----Removing ground overlays" + rawGroundOverlayId);  
             final GroundOverlayController groundOverlayController = groundOverlayIdToController.remove(groundOverlayId);
             if (groundOverlayController != null) {
                 groundOverlayController.remove();
