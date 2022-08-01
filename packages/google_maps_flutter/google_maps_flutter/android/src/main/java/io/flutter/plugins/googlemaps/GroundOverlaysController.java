@@ -86,6 +86,9 @@ class GroundOverlaysController {
             return;
         }
         String groundOverlayId = getGroundOverlayId(groundOverlay);
+
+        Log.d("GOOGLE MAPS","GOOGLE MAPS LIB----Change ground overlay " + groundOverlayId);
+
         GroundOverlayController groundOverlayController = groundOverlayIdToController.get(groundOverlayId);
         if (groundOverlayController != null) {
             Convert.interpretGroundOverlayOptions(groundOverlay, groundOverlayController);
