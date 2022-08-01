@@ -50,7 +50,7 @@ class GroundOverlaysController {
     private void addGroundOverlay(
             String groundOverlayId, GroundOverlayOptions groundOverlayOptions, boolean consumeTapEvents) {
             
-            Log.d("GOOGLE MAPS LIB----Add ground overlay");
+            Log.d("GOOGLE MAPS","GOOGLE MAPS LIB----Add ground overlay " + groundOverlayId);
 
         final GroundOverlay groundOverlay = googleMap.addGroundOverlay(groundOverlayOptions);
 
@@ -97,13 +97,12 @@ class GroundOverlaysController {
             return;
         }
 
-                Log.d("GOOGLE MAPS LIB----Removing ground overlays");  
-
         for (Object rawGroundOverlayId : groundOverlaysToRemove) {
             if (rawGroundOverlayId == null) {
                 continue;
             }
             String groundOverlayId = (String) rawGroundOverlayId;
+                            Log.d("GOOGLE MAPS","GOOGLE MAPS LIB----Removing ground overlays" + rawGroundOverlayId);  
             final GroundOverlayController groundOverlayController = groundOverlayIdToController.remove(groundOverlayId);
             if (groundOverlayController != null) {
                 groundOverlayController.remove();
