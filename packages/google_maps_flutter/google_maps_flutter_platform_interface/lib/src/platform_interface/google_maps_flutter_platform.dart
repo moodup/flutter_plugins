@@ -16,6 +16,8 @@ import 'package:google_maps_flutter_platform_interface/google_maps_flutter_platf
 import 'package:google_maps_flutter_platform_interface/src/types/utils/map_configuration_serialization.dart';
 import 'package:plugin_platform_interface/plugin_platform_interface.dart';
 
+import '../../google_maps_flutter_platform_interface.dart';
+
 /// The interface that platform-specific implementations of `google_maps_flutter` must extend.
 ///
 /// Avoid `implements` of this interface. Using `implements` makes adding any new
@@ -420,6 +422,7 @@ abstract class GoogleMapsFlutterPlatform extends PlatformInterface {
     Set<Polyline> polylines = const <Polyline>{},
     Set<Circle> circles = const <Circle>{},
     Set<TileOverlay> tileOverlays = const <TileOverlay>{},
+    Set<GroundOverlay> groundOverlays = const<GroundOverlay>{},
     Map<String, dynamic> mapOptions = const <String, dynamic>{},
   }) {
     return buildView(
@@ -431,6 +434,7 @@ abstract class GoogleMapsFlutterPlatform extends PlatformInterface {
       polylines: polylines,
       circles: circles,
       tileOverlays: tileOverlays,
+      groundOverlays: groundOverlays,
       gestureRecognizers: gestureRecognizers,
       mapOptions: mapOptions,
     );
@@ -454,6 +458,7 @@ abstract class GoogleMapsFlutterPlatform extends PlatformInterface {
       polylines: mapObjects.polylines,
       circles: mapObjects.circles,
       tileOverlays: mapObjects.tileOverlays,
+      groundOverlays: mapObjects.groundOverlays
       gestureRecognizers: widgetConfiguration.gestureRecognizers,
       mapOptions: jsonForMapConfiguration(mapConfiguration),
     );
