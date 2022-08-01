@@ -11,6 +11,7 @@ import io.flutter.plugin.common.MethodChannel;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import android.util.Log;
 
 class TileOverlaysController {
 
@@ -99,6 +100,7 @@ class TileOverlaysController {
       return;
     }
     String tileOverlayId = getTileOverlayId(tileOverlayOptions);
+                Log.d("GOOGLE MAPS","GOOGLE MAPS LIB----Change TILE overlay " + tileOverlayId);
     TileOverlayController tileOverlayController = tileOverlayIdToController.get(tileOverlayId);
     if (tileOverlayController != null) {
       Convert.interpretTileOverlayOptions(tileOverlayOptions, tileOverlayController);
