@@ -7,6 +7,7 @@ import com.google.android.gms.maps.model.GroundOverlayOptions;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import android.util.Log;
 
 import io.flutter.plugin.common.MethodChannel;
 
