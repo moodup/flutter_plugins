@@ -50,7 +50,7 @@ class TileOverlaysController {
     if (tileOverlayIdsToRemove == null) {
       return;
     }
-              Log.d("GOOGLE MAPS","GOOGLE MAPS LIB----Remove TILE overlay " + tileOverlayId);
+              Log.d("GOOGLE MAPS","GOOGLE MAPS LIB----Remove TILE overlay " + tileOverlayIdsToRemove);
     for (String tileOverlayId : tileOverlayIdsToRemove) {
       if (tileOverlayId == null) {
         continue;
@@ -84,10 +84,12 @@ class TileOverlaysController {
     if (tileOverlayOptions == null) {
       return;
     }
-              Log.d("GOOGLE MAPS","GOOGLE MAPS LIB----Add TILE overlay " + tileOverlayId);
     TileOverlayBuilder tileOverlayOptionsBuilder = new TileOverlayBuilder();
     String tileOverlayId =
         Convert.interpretTileOverlayOptions(tileOverlayOptions, tileOverlayOptionsBuilder);
+
+                  Log.d("GOOGLE MAPS","GOOGLE MAPS LIB----Add TILE overlay " + tileOverlayId);
+
     TileProviderController tileProviderController =
         new TileProviderController(methodChannel, tileOverlayId);
     tileOverlayOptionsBuilder.setTileProvider(tileProviderController);
