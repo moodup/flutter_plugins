@@ -422,7 +422,7 @@ abstract class GoogleMapsFlutterPlatform extends PlatformInterface {
     Set<Polyline> polylines = const <Polyline>{},
     Set<Circle> circles = const <Circle>{},
     Set<TileOverlay> tileOverlays = const <TileOverlay>{},
-    Set<GroundOverlay> groundOverlays = const<GroundOverlay>{},
+    Set<GroundOverlay> groundOverlays = const <GroundOverlay>{},
     Map<String, dynamic> mapOptions = const <String, dynamic>{},
   }) {
     return buildView(
@@ -458,7 +458,7 @@ abstract class GoogleMapsFlutterPlatform extends PlatformInterface {
       polylines: mapObjects.polylines,
       circles: mapObjects.circles,
       tileOverlays: mapObjects.tileOverlays,
-      groundOverlays: mapObjects.groundOverlays
+      groundOverlays: mapObjects.groundOverlays,
       gestureRecognizers: widgetConfiguration.gestureRecognizers,
       mapOptions: jsonForMapConfiguration(mapConfiguration),
     );
