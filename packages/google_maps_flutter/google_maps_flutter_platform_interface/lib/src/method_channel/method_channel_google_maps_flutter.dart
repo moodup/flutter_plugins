@@ -15,6 +15,7 @@ import 'package:flutter/services.dart';
 import 'package:google_maps_flutter_platform_interface/google_maps_flutter_platform_interface.dart';
 import 'package:stream_transform/stream_transform.dart';
 
+import '../../google_maps_flutter_platform_interface.dart';
 import '../types/tile_overlay_updates.dart';
 import '../types/utils/map_configuration_serialization.dart';
 
@@ -594,6 +595,7 @@ class MethodChannelGoogleMapsFlutter extends GoogleMapsFlutterPlatform {
     Set<Polyline> polylines = const <Polyline>{},
     Set<Circle> circles = const <Circle>{},
     Set<TileOverlay> tileOverlays = const <TileOverlay>{},
+    Set<GroundOverlay> groundOverlays = const <GroundOverlay>{},
     Set<Factory<OneSequenceGestureRecognizer>>? gestureRecognizers,
     Map<String, dynamic> mapOptions = const <String, dynamic>{},
   }) {
@@ -603,7 +605,13 @@ class MethodChannelGoogleMapsFlutter extends GoogleMapsFlutterPlatform {
       widgetConfiguration:
           MapWidgetConfiguration(initialCameraPosition: initialCameraPosition, textDirection: textDirection),
       mapObjects: MapObjects(
-          markers: markers, polygons: polygons, polylines: polylines, circles: circles, tileOverlays: tileOverlays),
+        markers: markers,
+        polygons: polygons,
+        polylines: polylines,
+        circles: circles,
+        tileOverlays: tileOverlays,
+        groundOverlays: groundOverlays,
+      ),
       mapOptions: mapOptions,
     );
   }
@@ -632,6 +640,7 @@ class MethodChannelGoogleMapsFlutter extends GoogleMapsFlutterPlatform {
       polylines: polylines,
       circles: circles,
       tileOverlays: tileOverlays,
+      groundOverlays: groundOverlays,
       gestureRecognizers: gestureRecognizers,
       mapOptions: mapOptions,
     );
