@@ -402,8 +402,13 @@ class _GoogleMapState extends State<GoogleMap> {
   Future<void> _updateGroundOverlays() async {
     final GoogleMapController controller = await _controller.future;
     // ignore: unawaited_futures
-    controller._updateGroundOverlays(GroundOverlayUpdates.from(_groundOverlays.values.toSet(), widget.groundOverlays));
-    _groundOverlays = keyByGroundOverlayId(widget.groundOverlays);
+    final GroundOverlayUpdates groundOverlayUpdates =
+        GroundOverlayUpdates.from(_groundOverlays.values.toSet(), widget.groundOverlays);
+
+    log("GOOGLE MAPS SDK: $groundOverlayUpdates");
+
+    controller._updateGroundOverlays(groundOverlayUpdates);
+    //_groundOverlays = keyByGroundOverlayId(widget.groundOverlays);
   }
 
   Future<void> onPlatformViewCreated(int id) async {
