@@ -5,6 +5,7 @@
 library google_maps_flutter;
 
 import 'dart:async';
+import 'dart:developer';
 import 'dart:io';
 // TODO(a14n): remove this import once Flutter 3.1 or later reaches stable (including flutter/flutter#104231)
 // ignore: unnecessary_import
