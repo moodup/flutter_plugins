@@ -313,7 +313,7 @@ class _GoogleMapState extends State<GoogleMap> {
         polygons: widget.polygons,
         polylines: widget.polylines,
         circles: widget.circles,
-        groundOverlays: widget.groundOverlays,
+        //groundOverlays: widget.groundOverlays,
       ),
       mapConfiguration: _mapConfiguration,
     );
