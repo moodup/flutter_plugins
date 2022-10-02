@@ -233,6 +233,12 @@ class GoogleMapsFlutterAndroid extends GoogleMapsFlutterPlatform {
           CircleId(call.arguments['circleId'] as String),
         ));
         break;
+      case 'groundOverlay#onTap':
+        _mapEventStreamController.add(GroundOverlayTapEvent(
+          mapId,
+          GroundOverlayId(call.arguments['groundOverlayId']),
+        ));
+        break;
       case 'map#onTap':
         _mapEventStreamController.add(MapTapEvent(
           mapId,
@@ -350,6 +356,18 @@ class GoogleMapsFlutterAndroid extends GoogleMapsFlutterPlatform {
     return _channel(mapId).invokeMethod<void>('tileOverlays#clearTileCache', <String, Object>{
       'tileOverlayId': tileOverlayId.value,
     });
+  }
+
+  @override
+  Future<void> updateGroundOverlays(
+    GroundOverlayUpdates groundOverlayUpdates, {
+    required int mapId,
+  }) {
+    assert(groundOverlayUpdates != null);
+    return channel(mapId).invokeMethod<void>(
+      'groundOverlays#update',
+      groundOverlayUpdates.toJson(),
+    );
   }
 
   @override
@@ -484,6 +502,7 @@ class GoogleMapsFlutterAndroid extends GoogleMapsFlutterPlatform {
       'polylinesToAdd': serializePolylineSet(mapObjects.polylines),
       'circlesToAdd': serializeCircleSet(mapObjects.circles),
       'tileOverlaysToAdd': serializeTileOverlaySet(mapObjects.tileOverlays),
+      'groundOverlaysToAdd': serializeGroundOverlaySet(mapObjects.groundOverlays)
     };
 
     const String viewType = 'plugins.flutter.dev/google_maps_android';
