@@ -15,10 +15,7 @@ import 'package:flutter/widgets.dart';
 import 'package:plugin_platform_interface/plugin_platform_interface.dart';
 
 import '../../google_maps_flutter_platform_interface.dart';
-<<<<<<< HEAD
-=======
 import '../types/utils/map_configuration_serialization.dart';
->>>>>>> task/sync_map_code
 
 /// The interface that platform-specific implementations of `google_maps_flutter` must extend.
 ///
