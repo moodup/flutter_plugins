@@ -22,7 +22,7 @@ dependencies:
     git:
         url: https://github.com/moodup/flutter_plugins.git
         path: packages/google_maps_flutter/google_maps_flutter_platform_interface/
-        ref: feature/add_ground_overlays_support
+        ref: task/google_maps_2.2.1
 
 dev_dependencies:
   flutter_driver:
