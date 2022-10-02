@@ -28,12 +28,12 @@ dependencies:
   google_maps_flutter_android:
     git:
       url: https://github.com/moodup/flutter_plugins.git
-      path: packages/google_maps_flutter/google_maps_flutter_platform_interface/
+      path: packages/google_maps_flutter/google_maps_flutter_android/
       ref: task/google_maps_2.2.1
   google_maps_flutter_ios:
     git:
       url: https://github.com/moodup/flutter_plugins.git
-      path: packages/google_maps_flutter/google_maps_flutter_platform_interface/
+      path: packages/google_maps_flutter/google_maps_flutter_ios/
       ref: task/google_maps_2.2.1
 
 dev_dependencies:
