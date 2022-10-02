@@ -1,3 +1,9 @@
+## 0.9.0+1
+
+* Updates imports for `prefer_relative_imports`.
+* Updates minimum Flutter version to 2.10.
+* Fixes avoid_redundant_argument_values lint warnings and minor typos.
+
 ## 0.9.0
 
 * **BREAKING CHANGE**: Methods that take `XTypeGroup`s now throw an
